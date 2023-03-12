@@ -3,6 +3,11 @@ import numpy as np
 import os
 
 def loadData(dataset: str) -> "tuple[np.ndarray, np.ndarray]":
+    '''
+    Loads and returns labelled SVHN data from one of three datasets.
+    Must be called in a directory which contains a dataset/ folder
+    containing the .mat files.
+    '''
     mat_names = {
         "train": "train_32x32.mat",
         "test": "test_32x32.mat",
@@ -18,4 +23,3 @@ def loadData(dataset: str) -> "tuple[np.ndarray, np.ndarray]":
 
 if __name__ == "__main__":
     X, y = loadData("train")
-    
