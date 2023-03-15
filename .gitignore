@@ -127,3 +127,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+extra.tar.gz.download/extra.tar.gz
+datasets/train_32x32.mat
