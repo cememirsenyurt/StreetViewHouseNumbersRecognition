@@ -5,7 +5,7 @@ comprises roughly 600,000 32 x 32 color images (32 x 32 x 3) which are labeled a
 The images are taken from Google Street View images of house numbers. Below are 5 images
 along with their corresponding labels:
 
-           ![image](https://user-images.githubusercontent.com/104103767/233764310-e386e7a7-1a77-4f86-bbeb-1c908e299abb.png)
+![image](https://user-images.githubusercontent.com/104103767/233764545-d28e9adb-22cc-4adf-bb75-6ade41cbf0b2.png)
 
 In analyzing the images, we found a number of important factors to consider. First, the sample
 digits vary greatly in terms of fonts, colors, orientation, lighting, and more. Additionally, many
@@ -28,13 +28,7 @@ that these numbers share some structural similarities.
 From the basic example model mentioned above, we all worked on different methods to
 improve accuracy. One approach we tried was building an ensemble model, combining the
 results of multiple slightly different CNN architectures to hopefully reduce variance.
-
-Cem
-Cem Emir Senyurt (45064076, csenyurt)
-Daniel Turpitka (58485924, dturpitk)
-Sam Poulin (14843973, spoulin)
-2
-worked on an ensemble model that consisted of three individual CNN models with varying
+I worked on an ensemble model that consisted of three individual CNN models with varying
 architectures. Each model was trained independently, and the outputs of each model were then
 combined using the average function to make the final prediction. The architecture of each
 individual model had the following layout:
@@ -68,10 +62,6 @@ the colors, but achieve the same or better accuracy.
 Each network had a similar structure, using Conv2D, MaxPooling, BatchNormalization,
 Dropout, and Dense layers and had 127,434 trainable parameters. While training each model,
 training was done in 4 stages, in each stage batch_size was doubled from previous to combat
-Cem Emir Senyurt (45064076, csenyurt)
-Daniel Turpitka (58485924, dturpitk)
-Sam Poulin (14843973, spoulin)
-3
 overfitting. On their own, each network was about 93% accurate on the validation dataset, while
 when three of them were combined and highest confidence prediction was chosen, accuracy of
 this color ensemble model was 94.6%, which is a considerable increase from single color models
@@ -106,10 +96,6 @@ more effective than a multicolor ensemble, it was also a lot more complex, havin
 trainable parameters than a multicolor ensemble.
 We decided to work with a singular model a bit more and see how far we can simplify it,
 while still keeping high accuracy. The easiest way to do it was to decrease the amount of filters
-Cem Emir Senyurt (45064076, csenyurt)
-Daniel Turpitka (58485924, dturpitk)
-Sam Poulin (14843973, spoulin)
-4
 in final convolutional layers, therefore decreasing the number of trainable parameters. During
 this process, while accuracy went down by a couple tenth of a percent, it was still higher than
 multicolor ensemble’s (94.6% vs 95.2%) and we even managed to achieve smaller complexity
