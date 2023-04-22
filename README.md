@@ -14,6 +14,8 @@ be seen above. The data also had some holdovers from MATLAB such as the 0 sample
 labeled as 10’s. Sam wrote data loader functions which do minor preprocessing such as
 normalizing input values between 0-1, swapping 10 labels to 0’s, and swapping the index from
 the last to the first axis.
+
+
 2. Model Selection
 Because SVHN is an image classification problem, we decided to use a convolutional
 neural network as the basis for our model. Convolutional neural networks are typically used for
@@ -24,6 +26,8 @@ CNNs. We started by implementing the basic Tensorflow CNN example for the CIFAR1
 (https://www.tensorflow.org/tutorials/images/cnn) and obtained 89-90% testing accuracy on
 SVHN. Most mistakes were between labels 5 and 6 or labels 3 and 8, which makes sense given
 that these numbers share some structural similarities.
+
+
 3. Model Tuning
 From the basic example model mentioned above, we all worked on different methods to
 improve accuracy. One approach we tried was building an ensemble model, combining the
@@ -32,6 +36,7 @@ I worked on an ensemble model that consisted of three individual CNN models with
 architectures. Each model was trained independently, and the outputs of each model were then
 combined using the average function to make the final prediction. The architecture of each
 individual model had the following layout:
+
 Conv2D(32, (3, 3), activation='relu') ->
 MaxPooling2D((2, 2)) ->
 Conv2D(64, (3, 3), activation='relu') ->
@@ -40,6 +45,7 @@ Conv2D(64, (3, 3), activation='relu') ->
 Flatten() ->
 Dense(N, activation='relu') ->
 Dense(10)
+
 Where N was 64, 128, and 256 for the three respective models. The ensemble members were
 trained using the Adam optimizer with a sparse categorical cross-entropy loss function. We
 trained the models for 10 epochs with a batch size of 32. This ensemble didn’t result in any
@@ -89,6 +95,8 @@ our final model we use two 3x3 convolutions before each pooling layer. This arch
 effectively mimics the outputs of a single convolution with a 5x5 filter, but requires less
 parameters and is therefore more efficient to train. This method helped us increase the
 complexity of the model while keeping the number of trainable parameters low.
+
+
 4. Final Model
 To select the simplest yet most accurate approach we were choosing between a multicolor
 ensemble approach and a singular complex model. While the singular model was considerably
