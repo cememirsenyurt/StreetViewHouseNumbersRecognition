@@ -5,7 +5,7 @@ comprises roughly 600,000 32 x 32 color images (32 x 32 x 3) which are labeled a
 The images are taken from Google Street View images of house numbers. Below are 5 images
 along with their corresponding labels:
 
-![image](https://user-images.githubusercontent.com/104103767/233764310-e386e7a7-1a77-4f86-bbeb-1c908e299abb.png)
+           ![image](https://user-images.githubusercontent.com/104103767/233764310-e386e7a7-1a77-4f86-bbeb-1c908e299abb.png)
 
 In analyzing the images, we found a number of important factors to consider. First, the sample
 digits vary greatly in terms of fonts, colors, orientation, lighting, and more. Additionally, many
