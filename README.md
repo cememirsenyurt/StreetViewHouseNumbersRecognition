@@ -1,4 +1,5 @@
 1. Describe Problem/Analyze Dataset
+
 Our group decided to work with the Street View House Numbers (SVHN) dataset for the
 project. The SVHN dataset is commonly used as a benchmark for image classification models. It
 comprises roughly 600,000 32 x 32 color images (32 x 32 x 3) which are labeled as digits 0-9.
@@ -17,6 +18,7 @@ the last to the first axis.
 
 
 2. Model Selection
+
 Because SVHN is an image classification problem, we decided to use a convolutional
 neural network as the basis for our model. Convolutional neural networks are typically used for
 image classification tasks because they take into account the relative positions of pixel inputs
@@ -29,6 +31,7 @@ that these numbers share some structural similarities.
 
 
 3. Model Tuning
+
 From the basic example model mentioned above, we all worked on different methods to
 improve accuracy. One approach we tried was building an ensemble model, combining the
 results of multiple slightly different CNN architectures to hopefully reduce variance.
@@ -98,6 +101,7 @@ complexity of the model while keeping the number of trainable parameters low.
 
 
 4. Final Model
+
 To select the simplest yet most accurate approach we were choosing between a multicolor
 ensemble approach and a singular complex model. While the singular model was considerably
 more effective than a multicolor ensemble, it was also a lot more complex, having way more
