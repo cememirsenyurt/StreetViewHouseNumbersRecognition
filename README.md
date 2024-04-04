@@ -12,9 +12,7 @@ In analyzing the images, we found a number of important factors to consider. Fir
 digits vary greatly in terms of fonts, colors, orientation, lighting, and more. Additionally, many
 of the samples contain digits to the left or right of the target digit, or “distracting digits”, as can
 be seen above. The data also had some holdovers from MATLAB such as the 0 samples being
-labeled as 10’s. Sam wrote data loader functions which do minor preprocessing such as
-normalizing input values between 0-1, swapping 10 labels to 0’s, and swapping the index from
-the last to the first axis.
+labeled as 10’s.
 
 
 2. Model Selection
